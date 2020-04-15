@@ -3,8 +3,7 @@ const graphqlHTTP = require('express-graphql');
 const schema = require('./../schema/schema');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://igor:123@cluster0-omo0j.mongodb.net/graphql?retryWrites=true&w=majority', { useNewUrlParser: true });
-// mongodb+srv://igor:<password>@cluster0-omo0j.mongodb.net/test?retryWrites=true&w=majority
+mongoose.connect('mongodb+srv://igor:123@cluster0-omo0j.mongodb.net/graphql?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 const app = express();
 const PORT = 3000;
 
