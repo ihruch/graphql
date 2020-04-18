@@ -8,7 +8,10 @@ const withGraphqlAdd = graphql(removeMovieMutation, {
     props: ({ mutate }) => ({
         removeMovie: movie => mutate({
           variables: movie,
-          refetchQueries: [{query: moviesQuery}]
+          refetchQueries: [{
+            query: moviesQuery,
+            variables: {name: ''}
+          }]
         }),
     }),
 });

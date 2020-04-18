@@ -8,7 +8,10 @@ const withGraphgl = graphql(removeDirectorMutation,{
     props: ({ mutate }) => ({
         removeDirector: (id) => mutate({
             variables: id,
-            refetchQueries: [{query: directorQuery}]
+            refetchQueries: [{
+                query: directorQuery,
+                variables: {name: ''}
+            }]
         }) 
     })
 })
